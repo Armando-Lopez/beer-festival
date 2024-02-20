@@ -26,7 +26,6 @@ export const SubscribeForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
     axios
       .post(SUBCRIBE_EMAIL_API_URL, { ...form })
       .then((response) => {

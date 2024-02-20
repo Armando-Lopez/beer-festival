@@ -30,7 +30,6 @@ app.post("/api/v1/subcribe", (req, res) => {
       function (response) {
         response.on("data", function (data) {
           const responseData = JSON.parse(data);
-          console.log(responseData);
           if (responseData?.errors?.length) {
             console.log(responseData.errors[0].error);
             // res.status(400).send({
