@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-bebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+@layer components {
+  .app-input {
+    @apply w-full mb-5
+  }
+  .app-input__label {
+    @apply block w-full text-coffee-bf mb-2
+  }
+  .app-input__text {
+    @apply w-full h-12 px-3 border border-coffee-bf bg-cream-bf
+  }
+  .required::after {
+    content: '*';
+    @apply text-orange-bf ml-1
+  }
+}
