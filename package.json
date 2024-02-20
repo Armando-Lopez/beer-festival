@@ -16,6 +16,6 @@
     "node": "18.18.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "cd client && npm run build && cd .. && node index.js"
   }
 }

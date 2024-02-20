@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 5001
 app.use(cors())
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'client/build/index.html')))
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client/build/index.html')))
+
 
 app.get("/api/v1/subcribe", (req, res) => {
   res.send('/use-post')
