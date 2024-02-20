@@ -22,7 +22,7 @@ app.post("/api/v1/subcribe", (req, res) => {
   // TODO: VALIDAR CAMPOS REQUERIDOS EN LAS PETICIONES
   try {
     const request = https.request(
-      process.env.MAILCHIMP_API,
+      `${process.env.MAILCHIMP_API}/lists/${process.env.MAILCHIMP_LIST_ID}`,
       {
         method: "POST",
         auth: `${process.env.MAILCHIMP_EMAIL}:${process.env.MAILCHIMP_API_KEY}`,
