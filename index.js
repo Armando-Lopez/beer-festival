@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 5001
 app.use(cors())
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'public/index.html')))
+app.use(express.static('public'))
+app.get('*', (req, res) => res.sendFile('public/index.html'))
 
 
 app.get("/api/v1/test", (req, res) => res.send('it works'))
