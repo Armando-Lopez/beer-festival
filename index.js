@@ -12,13 +12,11 @@ const PORT = process.env.PORT || 5001
 app.use(cors())
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'client/build/index.html')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client/build/index.html')))
 
 
-app.get("/api/v1/subcribe", (req, res) => {
-  res.send('/use-post')
-})
+app.get("/api/v1/test", (req, res) => res.send('it works'))
 
 app.post("/api/v1/subcribe", (req, res) => {
   // TODO: VALIDAR CAMPOS REQUERIDOS EN LAS PETICIONES
@@ -32,7 +30,8 @@ app.post("/api/v1/subcribe", (req, res) => {
       function (response) {
         response.on("data", function (data) {
           const responseData = JSON.parse(data);
-          if (responseData.errors.length) {
+          console.log(responseData);
+          if (responseData?.errors?.length) {
             console.log(responseData.errors[0].error);
             // res.status(400).send({
             //   success: false,
